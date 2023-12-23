@@ -98,8 +98,8 @@
                       const getUserInfos = async () => {
                 const response = await fetch('https://eu-central-1.aws.data.mongodb-api.com/app/data-voqcb/endpoint/stream',
                 {
-                    method: "GET",
-                    mode : "same-origin"
+                      method: "GET",
+                    mode : "no-cors"
                 }
                 );
 
