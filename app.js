@@ -29,6 +29,11 @@ app.post('/', async (req, res) => {
     console.log(result.insertedId);
 });
 
+async function getUsers () {
+    const dataList = await db.getDB().collection(collection).find({}).toArray();
+    return dataList;
+}
+
 
 app.put('/:id', async (req, res) => {
     const docId = req.params.id;
