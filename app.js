@@ -72,3 +72,5 @@ db.connect((callback) => {
         });
     }
 });
+
+module.exports = {getUsers};
