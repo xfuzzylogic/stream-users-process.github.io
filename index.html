@@ -95,13 +95,17 @@
                 });
             }
 
-            const getUserInfos = () => {
-                fetch('https://eu-central-1.aws.data.mongodb-api.com/app/data-voqcb/endpoint/stream', { method: "GET" }).then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    console.log(data);
-                    displayUsers(data);
-                });
+                      const getUserInfos = async () => {
+                const response = await fetch('https://eu-central-1.aws.data.mongodb-api.com/app/data-voqcb/endpoint/stream',
+                {
+                    method: "GET",
+                    mode : "same-origin"
+                }
+                );
+
+                const json = await response.json();
+
+                console.log(JSON.stringify(json));
             }
 
             getUserInfos();
