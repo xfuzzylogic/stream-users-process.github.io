@@ -34,6 +34,10 @@ async function getUsers () {
     return dataList;
 }
 
+app.get('getUsers', async (req, res) => {
+    const dataList = await db.getDB().collection(collection).find({}).toArray();
+    res.json(dataList);
+});
 
 app.put('/:id', async (req, res) => {
     const docId = req.params.id;
